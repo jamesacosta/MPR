@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  /* PALETA ESTRICTA CORPORATIVA */
+  --color-forest: #204A31;
+  --color-gold: #C2955A;
+  --color-dark: #2B2D2F;
+  --color-white: #FFFFFF;
+  --color-light-bg: #F4F4F4;
+
+  /* Tonos derivados y transparencias sobre la misma paleta */
+  --color-forest-dark: #173824;
+  --color-gold-hover: #AF8349;
+  --color-forest-rgb: 32, 74, 49;
+  --color-gold-rgb: 194, 149, 90;
+  --color-dark-rgb: 43, 45, 47;
+  
+  --shadow-sm: 0 2px 10px rgba(43, 45, 47, 0.05);
+  --shadow-md: 0 8px 24px rgba(43, 45, 47, 0.08);
+  --shadow-lg: 0 16px 40px rgba(43, 45, 47, 0.12);
+  --shadow-gold: 0 8px 25px rgba(194, 149, 90, 0.25);
+
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+  --transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-light-bg);
+  color: var(--color-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* Tipografía de Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-forest);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.section-title-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(194, 149, 90, 0.12);
+  color: var(--color-forest);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+  font-weight: 800;
+  color: var(--color-forest);
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  font-size: 1.08rem;
+  color: var(--color-dark);
+  max-width: 720px;
+  margin: 0 auto;
+  opacity: 0.88;
+}
+
+/* Botones con la paleta estricta */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-forest);
+  color: var(--color-white);
+  padding: 14px 26px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: var(--transition);
+  border: 2px solid var(--color-forest);
+  box-shadow: 0 4px 15px rgba(32, 74, 49, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-forest-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(32, 74, 49, 0.35);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  padding: 14px 26px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: var(--transition);
+  border: 2px solid var(--color-gold);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(194, 149, 90, 0.4);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  color: var(--color-forest);
+  padding: 13px 25px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: var(--transition);
+  border: 2px solid var(--color-forest);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-forest);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Animaciones sutiles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.45s ease forwards;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-light-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest);
+}
